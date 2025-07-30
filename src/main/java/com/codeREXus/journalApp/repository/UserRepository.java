@@ -8,5 +8,6 @@ public interface UserRepository extends MongoRepository <User, ObjectId> {
     // This interface will automatically provide CRUD operations for JournalEntry entities
 
     User findByUserName(String userName);
+    void deleteByUserName(String userName);
 }
 
