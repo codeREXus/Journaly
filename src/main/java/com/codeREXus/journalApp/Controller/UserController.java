@@ -18,7 +18,6 @@ public class UserController {
 
     @Autowired
     private UserService userService;
-    private static final PasswordEncoder passwordEncode = new BCryptPasswordEncoder();
 
     @GetMapping
     public List<User> getALL(){
@@ -27,6 +26,7 @@ public class UserController {
 
     @PostMapping
     public void createUser(@RequestBody User user){
+
         userService.saveEntry(user);
     }
 
