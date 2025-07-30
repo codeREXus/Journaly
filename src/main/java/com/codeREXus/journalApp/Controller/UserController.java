@@ -18,6 +18,7 @@ public class UserController {
 
     @Autowired
     private UserService userService;
+    private static final PasswordEncoder passwordEncode = new BCryptPasswordEncoder();
 
     @GetMapping
     public List<User> getALL(){
