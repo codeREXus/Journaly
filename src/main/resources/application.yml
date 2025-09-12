@@ -1,0 +1,8 @@
+spring:
+  profile:
+    active: dev
+#spring:
+#  data:
+#    mongodb:
+#      username: journalyUser
+#      password: journalyPassword

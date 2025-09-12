@@ -84,8 +84,7 @@ public class JournalController {
     @PutMapping("/id/{myId}")
     public ResponseEntity<?> updateById(@PathVariable ObjectId myId, @RequestBody JournalEntry newEntry) {
 
-        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-        String userName = auth.getName();
+        String userName = SecurityContextHolder.getContext().getAuthentication().getName();
 
         User user = userService.findByUserName(userName);
         List<JournalEntry> collect= user.getJournalEntries().stream().filter(x -> x.getId().equals(myId)).collect(Collectors.toList());
